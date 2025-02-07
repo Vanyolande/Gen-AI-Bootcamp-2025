@@ -3,12 +3,12 @@
 BOYOtech is a non-profit organization providing AI powered educational services and wants to invest in owning their infrastructure.
 The 2 major concerns are about the privacy of user data and the cost of manged services for GenAI will greatly raise cost.
 
-They want to invest in an AI PC of about 10-12K
+We want to invest in an AI PC of about 10-12K
 They have about 250 active students who are located within the city of Bamenda in Cameroon.
 
-## Assumptons
+## Assumptions
 
-We assums that the open-source LLMs that we choose will be powerful enough to run on hardware with an investment of 10-12k
+We assume that the open-source LLMs that we choose will be powerful enough to run on hardware with an investment of 10-12k
 We are going to hook up a single server in the office to the internet and have enough bandwidth to serve the 250 students.
 
 ## Data Strategy
