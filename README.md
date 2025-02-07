@@ -26,12 +26,19 @@ More details on IBM Granite:https://huggingface.co/ibm-granite
 
 ## Next Steps
 
-Finalize hardware specifications based on computational needs and power efficiency.
-Procure the AI PC and set up necessary software dependencies.
-Deploy IBM Granite (or an alternative LLM) and test performance.
-Develop an internal web interface to facilitate student interactions with the AI system.
-Implement security measures for data access and compliance.
-Optimize bandwidth usage to ensure smooth operations.
+1.Finalize hardware specifications based on computational needs and power efficiency.
+
+2.Procure the AI PC and set up necessary software dependencies.
+
+3.Deploy IBM Granite (or an alternative LLM) and test performance.
+
+4.Develop an internal web interface to facilitate student interactions with the AI system.
+
+5.Implement security measures for data access and compliance.
+
+6.Optimize bandwidth usage to ensure smooth operations.
+
+7.Explore AWS credits or sponsorships to support BOYOtech's educational mission.
 ________________________________________
 
  
