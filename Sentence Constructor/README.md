@@ -1,9 +1,9 @@
 ##  CHatGPT Powered Assistant Guide
 ### Which Model
 
-GPT 4o
+GPT 4o 
 
-I have the free version of ChatGPT 
+I have the paid version of ChatGPT 
 
 ## Prompting Guides
 
