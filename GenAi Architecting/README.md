@@ -1,44 +1,28 @@
-## Functional Requirements
+## AWS-Based Generative AI Architecture for a Secure Language Learning Application
+## Business Goal
+ This is a high-level conceptual architecture diagram that highlights the core features of a Language Learning Application on AWS Cloud. The architecture is designed for non-technical, business-minded stakeholders, providing a clear explanation of the workflow and AWS services involved in the proposed language learning solution.
 
-BOYOtech is a non-profit organization providing AI powered educational services and wants to invest in owning their infrastructure.
-The 2 major concerns are about the privacy of user data and the cost of manged services for GenAI will greatly raise cost.
+## Step 1: Simple Generative AI Architecture
+•	Student Interaction: A student submits a query to the AI model through the web or mobile app.
+•	API Routing: AWS API Gateway securely routes the request to the backend.
+•	AI Processing: The Generative AI Model (Amazon Bedrock) processes the query and generates a response.
 
-We want to invest in an AI PC of about 10-12K
-They have about 250 active students who are located within the city of Bamenda in Cameroon.
+## Step 2: RAG (Retrieval-Augmented Generation) Pipeline Implementation
+To enhance the application's ability to access up-to-date and specialized information, we have opted to implement RAG.
+## Why RAG?
+RAG allows the AI model to retrieve relevant data from external sources (such as a database or the internet) before generating a response. This approach provides more accurate and current responses, enables customization with customer-specific data and it is cost-effective compared to fine-tuning, as it avoids retraining large models.
+ ## How It Works
+ Student submits a query through the application. If relevant data is needed, the model retrieves it from a vector database (e.g., Amazon OpenSearch Service) for structured information or from the internet via API calls using AWS Lambda & API Gateway. 
 
-## Assumptions
+## Step 3: Implementing Security Guardrails
+To ensure a safe and secure language learning experience, I have integrated multiple security guardrails at both the input and output stages.
+i. Input Guardrails block harmful or inappropriate user inputs
+•	AWS WAF will prevent malicious queries, such as SQL injection 
+•	Amazon GuardDuty will detect and alert on potential security threats, including unauthorized access or anomaly detection.
+ii. Amazon Bedrock – Processes retrieved context (via RAG) and generates a personalized response.
+iii. Output Guardrails – Amazon Comprehend will scan and filter the generated response to ensure no toxic, biased, or non-compliant content is sent out and that responses align with educational guidelines.
 
-We assume that the open-source LLMs that we choose will be powerful enough to run on hardware with an investment of 10-12k
-We are going to hook up a single server in the office to the internet and have enough bandwidth to serve the 250 students.
-
-## Data Strategy
-
-Because of copyrighted materials concerns, we must purchase and supply materials which will be stored for access in our database.
-However there is a future possibility of leveraging Amazon S3 for scalable storage.
-Data redundancy will be ensured through local backups and Amaazon S3 Glacier for long-term archival storage.
-
-## Considerations
-
-We are considering using IBM Granite because it is a truely opensource model with training data that is traceable so we can avoid any copyright issues
-and we are able to know what is going on in the model
-
-More details on IBM Granite:https://huggingface.co/ibm-granite
-
-## Next Steps
-
-1.Finalize hardware specifications based on computational needs and power efficiency.
-
-2.Procure the AI PC and set up necessary software dependencies.
-
-3.Deploy IBM Granite (or an alternative LLM) and test performance.
-
-4.Develop an internal web interface to facilitate student interactions with the AI system.
-
-5.Implement security measures for data access and compliance.
-
-6.Optimize bandwidth usage to ensure smooth operations.
-
-7.Explore AWS credits or sponsorships to support BOYOtech's educational mission.
-________________________________________
-
- 
+## Step 4: Prompt Caching with Amazon ElastiCache (Redis)
+To enhance efficiency and performance, we have integrated a prompt cache into the architecture using Amazon ElastiCache (Redis).
+This will store frequently used querries and responses 
+Reduces redundant LLM processing , improving speed and cost efficiency.
